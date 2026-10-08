@@ -1,2 +1,6 @@
 # 3D-printers-repair
-static landing for master of repair 3D printers
+Статичный простой лэндинг для мастера по ремонту 3д принтеров
+
+# Используемые технологии
+чистый html, js, css
+
