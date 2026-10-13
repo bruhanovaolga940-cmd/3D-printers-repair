@@ -4,7 +4,7 @@
     --card:#1a2029;
     --line:#252d38;
     --txt:#e8edf4;
-    --muted:#9aa7b8;
+    --muted:rgb(154, 167, 184);
     --accent:#ff6a2b;
     --accent-soft:rgba(255,106,43,.12);
     --green:#37d67a;
@@ -58,6 +58,66 @@
     margin-bottom: 16px;
     list-style: none;
   }
+
+
+  .price-table {
+    border-collapse: collapse;
+    width: 100%;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    background:var(--card);
+    padding: 8px;
+
+  }
+  .price-table th,
+  .price-table td {
+    padding: 16px 24px;
+    vertical-align: middle;
+    text-align: left;
+    /* border-bottom: 1px solid currentColor; */
+  }
+  .price-table .name small {
+    display: block;
+    margin-top: 4px;
+    opacity: 0.7;
+  }
+  .price-table .price {
+    white-space: nowrap;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .price-table tr {
+    border-bottom: 0.5px solid rgba(154, 167, 184,.2);
+  }
+  .price-table th:not(:first-child),
+  .price-table td:not(:first-child) {
+    text-align: right;
+  }
+  .price-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  @media (max-width: 600px) {
+    .price-table th,
+    .price-table td {
+      padding: 8px 10px;
+    }
+  }
+
+    /* .price-table{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+  .price-row{
+    display:flex;justify-content:space-between;gap:20px;
+    padding:17px 24px;border-bottom:1px solid var(--line);
+  }
+  .price-row:last-child{border-bottom:0}
+  .price-row:nth-child(odd){background:rgba(255,255,255,.012)}
+  .price-row .name{font-size:15.5px}
+  .price-row .name small{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+  .price-row .price{white-space:nowrap;font-weight:600;color:var(--accent);font-size:16px}
+  .note{
+    margin-top:16px;color:var(--muted);font-size:14px;
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:14px 18px;
+  } */
 
   /* Меню на телефоне: всегда на своей строке, на всю ширину */
   header .navbar-collapse{
@@ -117,20 +177,7 @@
   .svc-card p{color:var(--muted);font-size:15px;margin:0}
 
   /* ================= ПРАЙС ================= */
-  .price-table{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
-  .price-row{
-    display:flex;justify-content:space-between;gap:20px;
-    padding:17px 24px;border-bottom:1px solid var(--line);
-  }
-  .price-row:last-child{border-bottom:0}
-  .price-row:nth-child(odd){background:rgba(255,255,255,.012)}
-  .price-row .name{font-size:15.5px}
-  .price-row .name small{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
-  .price-row .price{white-space:nowrap;font-weight:600;color:var(--accent);font-size:16px}
-  .note{
-    margin-top:16px;color:var(--muted);font-size:14px;
-    background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:14px 18px;
-  }
+
 
   /* ================= FORM ================= */
   form.lead-form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
@@ -267,4 +314,27 @@
   .calc{padding:18px}
   .calc-out{font-size:26px}
   .carousel-control-prev,.carousel-control-next{width:38px;height:38px}
+}
+/* ===== МОБИЛЬНАЯ ШАПКА: высота верхней строки фиксирована ===== */
+@media(max-width:991.98px){
+  header .wrap{
+    min-height:0;
+    padding-top:13px;      /* (66 - 40) / 2 */
+    padding-bottom:13px;
+  }
+  header .logo{
+    height:40px;
+  }
+  header .navbar-toggler{
+    height:40px;
+    padding:0 11px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  header .navbar-collapse{
+    flex-basis:100%;
+    width:100%;
+    padding:6px 0 18px;
+  }
 }

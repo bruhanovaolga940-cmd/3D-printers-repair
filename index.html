@@ -3,18 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARQION | печать 3Д деталей и ремонт 3Д принтеров | Крсноярск</title>
-<meta name="description" content="Печатаем 3D-детали на заказ: PLA, PETG, ABS, TPU и фотополимер. Расчёт стоимости онлайн, срок 1–3 дня, доставка по городу и почтой. Ремонт 3Д принтеров. Диагностика, настройка.">
+<title>Ремонт 3D-принтеров на выезде — диагностика, ремонт, настройка | Красноярск</title>
+<meta name="description" content="Ремонт и обслуживание 3D-принтеров: диагностика, замена экструдера, сопел, термобарьеров, прошивка, калибровка. Выезд по городу. Гарантия 30 дней.">
+<!-- Bootstrap 5.3.3 -->
+    <script type="text/javascript" src="email.min.js"></script>
 
+    <script type="text/javascript">
+       // Ждем полной загрузки DOM структуры, чтобы скрипт точно увидел библиотеку
+       document.addEventListener("DOMContentLoaded", function() {
+          if (typeof emailjs !== 'undefined') {
+              emailjs.init({
+                  publicKey: "iO9RDrHw8YYJTFamQ" // <--- Замените на ваш Public Key
+              });
+              console.log("EmailJS успешно инициализирован локально!");
+          } else {
+              console.error("Критическая ошибка: файл email.min.js не найден или поврежден!");
+          }
+       });
+    </script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css" >
 </head>
 <body id="top">
+
 <!-- ================= HEADER ================= -->
 <header>
   <nav class="navbar navbar-expand-lg">
     <div class="wrap">
-      <a class="navbar-brand logo p-0 me-0" href="index.html">
+      <a class="navbar-brand logo p-0 me-0" href="#top">
         <span class="dot"></span>ARQION · Красноярск
       </a>
 
@@ -26,12 +42,12 @@
 
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#works">Работы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#works">Услуги</a></li>
           <li class="nav-item"><a class="nav-link" href="#prices">Цены</a></li>
           <li class="nav-item"><a class="nav-link" href="#faq">Вопросы</a></li>
-          <li class="nav-item"><a class="nav-link" href="repair.html">Ремонт</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="repair.html">Ремонт</a></li> -->
           <li class="nav-item mt-2 mt-lg-0 ms-lg-3">
-            <a class="cta-btn sm d-block" href="#order">Заказать печать</a>
+            <a class="cta-btn sm d-block" href="#request">Оставить заявку</a>
           </li>
         </ul>
       </div>
@@ -40,280 +56,271 @@
 </header>
 
 <!-- ================= HERO ================= -->
+
 <section class="hero">
+  
   <div class="wrap">
-    <div class="pill">Печать на заказ · от одной детали</div>
-    <h1>Напечатаем вашу 3D-деталь <em>за 1–3 дня</em></h1>
+    <div class="pill">Выезд по городу</div>
+    <h1>Ремонт и техническое обслуживание 3D принтеров</h1>
     <p class="hero-text">
-      Прототипы, запчасти, корпуса, декор, мелкие серии. Присылаете модель или рисунок —
-      считаем стоимость, печатаем и отправляем. Есть доставка по городу и почтой.
+      Ремотируем FDM и фотополимерные принтеры: Creality, Bambu Lab, Prusa, Anycubic, Elegoo и другие.
     </p>
     <div class="cta-row">
-      <a class="cta-btn" href="#order">Отправить модель</a>
-      <a class="cta-btn ghost" href="#calc">Рассчитать цену</a>
+      <a class="cta-btn" href="#request">Оставить заявку</a>
+      <a class="cta-btn ghost" href="tel:+79950765209">Позвонить</a>
     </div>
     <div class="facts">
-      <div class="fact"><b>от 500 ₽</b><span>минимальный заказ</span></div>
-      <div class="fact"><b>1–3 дня</b><span>срок печати</span></div>
-      <div class="fact"><b>5 типов</b><span>материалов: PLA, PETG, ABS, TPU, смола</span></div>
+      <div class="fact"><b>от 1500 ₽</b><span>диагностика при ремонте — бесплатно</span></div>
+      <div class="fact"><b>1–4 дня</b><span>типичный срок ремонта</span></div>
+      <div class="fact"><b>6 лет</b><span>опыт работы с принтерамиы</span></div>
     </div>
-  </div>
-</section>
-
-<!-- ================= СЛАЙДЕР РАБОТ ================= -->
-<section id="works">
-  <div class="wrap">
-    <h2>Готовые работы</h2>
-    <p class="sub">Примеры деталей, напечатанных под заказ. Нажмите стрелки или листайте пальцем.</p>
-
-    <div id="worksCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#worksCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Работа 1"></button>
-        <button type="button" data-bs-target="#worksCarousel" data-bs-slide-to="1" aria-label="Работа 2"></button>
-        <button type="button" data-bs-target="#worksCarousel" data-bs-slide-to="2" aria-label="Работа 3"></button>
-        <button type="button" data-bs-target="#worksCarousel" data-bs-slide-to="3" aria-label="Работа 4"></button>
-      </div>
-
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="slide-media">
-            <span>Фото: img/work1.jpg</span>
-            <img src="img/work1.jpg" alt="Корпус для датчика, PETG" onerror="this.remove()">
-          </div>
-          <div class="slide-caption">
-            <h3>Корпус для датчика</h3>
-            <p>PETG, 2 шт. Печать за 2 дня, с креплениями под винты М3.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="slide-media">
-            <span>Фото: img/work2.jpg</span>
-            <img src="img/work2.jpg" alt="Миниатюра фигурки, смола" onerror="this.remove()">
-          </div>
-          <div class="slide-caption">
-            <h3>Миниатюра для настольной игры</h3>
-            <p>Фотополимер, высокая детализация, без видимых слоёв.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="slide-media">
-            <span>Фото: img/work3.jpg</span>
-            <img src="img/work3.jpg" alt="Гибкий чехол, TPU" onerror="this.remove()">
-          </div>
-          <div class="slide-caption">
-            <h3>Гибкий чехол и прокладки</h3>
-            <p>TPU 95A, подобрана ориентация для прочности швов.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="slide-media">
-            <span>Фото: img/work4.jpg</span>
-            <img src="img/work4.jpg" alt="Прототип детали, ABS" onerror="this.remove()">
-          </div>
-          <div class="slide-caption">
-            <h3>Прототип для проверки посадки</h3>
-            <p>ABS на закрытом принтере, без деформаций по углам.</p>
-          </div>
-        </div>
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#worksCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Назад</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#worksCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Вперёд</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ПРИНТЕР ================= -->
-<section id="printer">
-  <div class="wrap">
-    <div class="row g-4 g-lg-5 align-items-center">
-      <div class="col-12 col-lg-6">
-        <div class="printer-photo">
-          <span>Фото принтера: img/printer.jpg</span>
-          <img src="img/printer.jpg" alt="Принтер, на котором печатаем заказы" onerror="this.remove()">
-        </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <h2>На чём печатаем</h2>
-        <p class="sub" style="margin-bottom:20px">
-          Основной принтер — <b>[Bambu Lab P1S]</b>: закрытый корпус, стабильная печать
-          ABS и ASA без деформаций по углам. Для смолы — отдельный фотополимерный принтер.
-        </p>
-        <ul class="spec-list">
-          <li><span>Модель</span><span>[Bambu Lab P1S]</span></li>
-          <li><span>Технология</span><span>FDM, закрытый корпус</span></li>
-          <li><span>Область печати</span><span>256 × 256 × 256 мм</span></li>
-          <li><span>Сопло</span><span>0,4 мм, до 300 °C</span></li>
-          <li><span>Материалы</span><span>PLA, PETG, ABS, ASA, TPU</span></li>
-          <li><span>Точность</span><span>до 0,1 мм</span></li>
-        </ul>
-        <p class="small-note">Характеристики — пример, замените на данные вашего принтера.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= МАТЕРИАЛЫ ================= -->
-<section id="materials">
-  <div class="wrap">
-    <h2>Материалы</h2>
-    <p class="sub">Выбирайте по задаче. Если сомневаетесь, напишите, что деталь должна выдерживать, и подскажу.</p>
-
-    <div class="price-table">
-      <div class="price-row"><div class="name">PLA<small>Декор, прототипы, макеты. Не для нагрева и улицы</small></div><div class="price">от 5 ₽/г</div></div>
-      <div class="price-row"><div class="name">PETG<small>Прочные функциональные детали, устойчив к влаге и небольшим нагрузкам</small></div><div class="price">от 6 ₽/г</div></div>
-      <div class="price-row"><div class="name">ABS / ASA<small>Термостойкие детали, корпуса, детали для улицы (ASA — UV-стойкий)</small></div><div class="price">от 7 ₽/г</div></div>
-      <div class="price-row"><div class="name">TPU<small>Гибкие детали: чехлы, прокладки, уплотнители</small></div><div class="price">от 9 ₽/г</div></div>
-      <div class="price-row"><div class="name">Фотополимерная смола<small>Мелкие детали и миниатюры с гладкой поверхностью</small></div><div class="price">от 12 ₽/г</div></div>
-    </div>
-    <div class="note">Цены за грамм материала с учётом работы принтера. Итоговая стоимость зависит от веса и времени печати.</div>
   </div>
 </section>
 
 <!-- ================= УСЛУГИ ================= -->
 <section id="services">
   <div class="wrap">
-    <h2>Что делаем</h2>
-    <p class="sub">От одной детали до небольшой серии. Берём на себя подготовку файла, если нужно.</p>
+    <h2>Чем помогаем</h2>
     <div class="row g-3 g-lg-4">
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="svc-card">
-          <h3>Печать по вашей модели</h3>
-          <p>Присылаете файл STL, 3MF или STEP. Проверяем модель, подбираем материал и ориентацию, печатаем.</p>
+          <h3>Замена и ремонт экструдера</h3>
+          <!-- <p>Замена шестерён, тефлоновых трубок, чистка от нагара, устранение засоров и «петухов».</p> -->
         </div>
       </div>
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="svc-card">
-          <h3>Исправление и подготовка модели</h3>
-          <p>Чиним дыры и «неводонепроницаемые» STL, масштабируем, готовим под печать.</p>
+          <h3>Ремонт и настройка слотадля печати</h3>
+          <!-- <p>Замена сопел, термобарьеров, нагревателей, термисторов, чистка от нагара, борьба с засорами и «петухами».</p> -->
         </div>
       </div>
+
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="svc-card">
-          <h3>Модель по эскизу или фото</h3>
-          <p>Нарисуем 3D-модель по чертежу, эскизу или образцу. Стоимость моделирования считаем отдельно.</p>
+          <h3>Ремонт электроники и плат управления</h3>
+          <!-- <p>Замена ремней, подшипников, рельсов, винтов, калибровка геометрии, устранение люфтов и рывков.</p> -->
         </div>
       </div>
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="svc-card">
-          <h3>Прототипы и запчасти</h3>
-          <p>Быстро проверяем посадку и размеры. Печатаем замену сломанного крепления или корпуса.</p>
+          <h3>Замена и ремонт термоблоков и нагревателей</h3>
+          <!-- <p>Ремонт и замена плат управления, перепрошивка, установка Klipper или Marlin, настройка сетки стола.</p> -->
         </div>
       </div>
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="svc-card">
-          <h3>Мелкие серии</h3>
-          <p>От 5 штук: скидка на тираж, одинаковое качество всей партии.</p>
+          <h3>Ремонт механики — направляющие, каретки, винты</h3>
+          <!-- <p>Замена FEP-плёнки и LCD-экранов, ремонт механики оси Z, замена подсветки, настройка экспозиции.</p> -->
         </div>
       </div>
+
       <div class="col-12 col-md-6 col-lg-4">
         <div class="svc-card">
-          <h3>Постобработка</h3>
-          <p>Удаляем поддержки, шлифуем, сглаживаем ABS парами ацетона, красим по запросу.</p>
+          <h3>Замена двигателей шагового типа</h3>
+          <!-- <p>Установка BLTouch/CR-Touch, direct drive, тихих драйверов, плановое ТО и смазка механики.</p> -->
         </div>
       </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="svc-card">
+          <h3>Прошивка и обновление программного обеспечения</h3>
+          <!-- <p>Установка BLTouch/CR-Touch, direct drive, тихих драйверов, плановое ТО и смазка механики.</p> -->
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="svc-card">
+          <h3>Диагностика и устранение сложных системных сбоев</h3>
+          <!-- <p>Установка BLTouch/CR-Touch, direct drive, тихих драйверов, плановое ТО и смазка механики.</p> -->
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ================= ЦЕНЫ + КАЛЬКУЛЯТОР ================= -->
+<!-- ================= ЦЕНЫ ================= -->
 <section id="prices">
   <div class="wrap">
     <h2>Цены</h2>
-    <p class="sub">Минимальный заказ — 500 ₽. Точную сумму называю после проверки модели.</p>
+    <p class="sub">Стоимость работ без учёта запчастей. Точную сумму называю после диагностики — до начала ремонта.</p>
 
-    <div class="price-table">
-      <div class="price-row"><div class="name">Расчёт стоимости по файлу<small>Бесплатно, в течение рабочего дня</small></div><div class="price">0 ₽</div></div>
-      <div class="price-row"><div class="name">Печать до 20 г<small>Мелкие детали, брелоки, крепления</small></div><div class="price">от 500 ₽</div></div>
-      <div class="price-row"><div class="name">Печать 20–200 г<small>Корпуса, держатели, функциональные детали</small></div><div class="price">от 1 000 ₽</div></div>
-      <div class="price-row"><div class="name">Печать свыше 200 г<small>Крупные детали, сборка из нескольких частей</small></div><div class="price">по расчёту</div></div>
-      <div class="price-row"><div class="name">Исправление модели<small>Дыры, масштаб, подготовка к печати</small></div><div class="price">от 300 ₽</div></div>
-      <div class="price-row"><div class="name">Моделирование по эскизу<small>Стоимость зависит от сложности</small></div><div class="price">от 1 500 ₽</div></div>
+    <!-- <div class="price-table">
+      <div class="price-row"><div class="name">Диагностика на выезде<small>Бесплатно, если соглашаетесь на ремонт</small></div><div class="price">1 000 ₽</div></div>
+      <div class="price-row"><div class="name">Комплексная настройка и калибровка<small>Стол, поток, температуры, тестовая печать</small></div><div class="price">1 500 ₽</div></div>
+      <div class="price-row"><div class="name">Чистка и обслуживание хотэнда<small>Разбор, удаление нагара, замена сопла</small></div><div class="price">от 1 500 ₽</div></div>
+      <div class="price-row"><div class="name">Замена термобарьера / нагревателя / термистора</div><div class="price">от 1 800 ₽</div></div>
+      <div class="price-row"><div class="name">Замена ремней, подшипников, колёс</div><div class="price">от 2 000 ₽</div></div>
+      <div class="price-row"><div class="name">Замена платы управления<small>Пайка и подключение</small></div><div class="price">от 3 000 ₽</div></div>
+      <div class="price-row"><div class="name">Прошивка Marlin / установка Klipper<small>Включая настройку конфига</small></div><div class="price">от 2 500 ₽</div></div>
+      <div class="price-row"><div class="name">Замена FEP-плёнки<small>Фотополимерные принтеры</small></div><div class="price">от 1 500 ₽</div></div>
+      <div class="price-row"><div class="name">Замена LCD-экрана<small>Фотополимерные принтеры</small></div><div class="price">от 3 500 ₽</div></div>
+      <div class="price-row"><div class="name">Установка BLTouch / CR-Touch / Direct Drive</div><div class="price">от 2 500 ₽</div></div>
+    </div> -->
+<table class="price-table" style="border-collapse: collapse;">
+  <thead>
+    <tr class="price-header">
+      <th>Услуга</th>
+      <th>Базовый ремонт</th>
+      <th>Сложный ремонт / нестандартное оборудование</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="price-row">
+      <td>
+        <div class="name">Ремонт 3D-принтера</div>
+      </td>
+      <td>
+        <div class="price">от 1 500 ₽</div>
+      </td>
+      <td>
+        <div class="price">от 3 500 ₽</div>
+      </td>
+    </tr>
+    <tr class="price-row">
+      <td>
+        <div class="name">Ремонт и обслуживание печатающей головы</div>
+      </td>
+      <td>
+        <div class="price">от 2 000 ₽</div>
+      </td>
+      <td>
+        <div class="price">от 4 500 ₽</div>
+      </td>
+    </tr>
+    <tr class="price-row">
+      <td>
+        <div class="name">Ремонт и обслуживание кинематики</div>
+      </td>
+      <td>
+        <div class="price">от 5 000 ₽</div>
+      </td>
+      <td>
+        <div class="price">от 7 000 ₽</div>
+      </td>
+    </tr>
+    <tr class="price-row">
+      <td>
+        <div class="name">Замена узлов и комплектующих</div>
+      </td>
+      <td>
+        <div class="price">от 1 000 ₽</div>
+      </td>
+      <td>
+        <div class="price">от 1 000 ₽</div>
+      </td>
+    </tr>
+    <tr class="price-row">
+      <td>
+        <div class="name">Настройка и калибровка</div>
+      </td>
+      <td>
+        <div class="price">от 2 000 ₽</div>
+      </td>
+      <td>
+        <div class="price">от 4 000 ₽</div>
+      </td>
+    </tr>
+    <tr class="price-row">
+      <td>
+        <div class="name">Ремонт электроники</div>
+      </td>
+      <td>
+        <div class="price">от 2 000 ₽</div>
+      </td>
+      <td>
+        <div class="price">от 5 000 ₽</div>
+      </td>
+    </tr>
+    <tr class="price-row">
+      <td>
+        <div class="name">Настройка и обновление прошивки</div>
+      </td>
+      <td>
+        <div class="price">от 2 000 ₽</div>
+      </td>
+      <td>
+        <div class="price">от 4 000 ₽</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <div class="note">
+      <br>Гарантия на работу 30 дней.
     </div>
+
 </section>
 
-<!-- ================= ЗАКАЗ ================= -->
-<section id="order">
+<!-- ================= ЗАЯВКА ================= -->
+<section id="request">
   <div class="wrap">
+    <h2>Оставить заявку</h2>
+    <p class="sub">Опишите модель и проблему — свяжемся в течение рабочего дня.</p>
+
     <div class="row g-4 g-lg-5">
-      <div class="col-12 col-lg-5">
-        <h2>Заказать печать</h2>
-        <p class="sub">Заполните форму, и я свяжусь с вами в течение рабочего дня, уточню детали и назову точную цену.</p>
-        <ul class="contact-list">
-          <li>
-            <div class="ic">1</div>
-            <div><b>Опишите деталь</b><span>Что печатаем, размеры, для чего нужна</span></div>
-          </li>
-          <li>
-            <div class="ic">2</div>
-            <div><b>Отправьте модель</b><span>Файл STL, 3MF или STEP — ссылкой или в Telegram</span></div>
-          </li>
-          <li>
-            <div class="ic">3</div>
-            <div><b>Получите результат</b><span>Печать 1–3 дня, доставка по городу или почтой</span></div>
-          </li>
-        </ul>
+      <div class="col-12 col-lg-6">
+        <form id="leadForm" class="lead-form" novalidate>
+          <div class="field">
+            <label for="name">Как к вам обращаться</label>
+            <input id="name" name="name" type="text" placeholder="Иван" required>
+          </div>
+          <div class="field">
+            <label for="phone">Телефон или Telegram</label>
+            <input id="phone" name="phone" type="text" placeholder="+7 999 123-45-67" required>
+          </div>
+          <div class="field">
+            <label for="model">Модель принтера</label>
+            <input id="model" name="model" type="text" placeholder="Creality Ender 3 / Bambu Lab P1S">
+          </div>
+          <div class="field">
+            <label for="service">Что нужно сделать</label>
+            <select id="service" name="service">
+              <option>Ремонт 3д принтера</option>
+              <option>Ремонт и обслуживание печатающей головки</option>
+              <option>Ремонт и обслуживание кинематики</option>
+              <option>Замена узлов и комплектующих</option>
+              <option>Настройка и калибровка</option>
+              <option>Ремонт электроники</option>
+              <option>Настройка и обновление прошивки</option>
+              <option>Диагностика(точная проблема не известна)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="comment">Опишите проблему</label>
+            <textarea id="comment" name="comment" placeholder="Например: печатает с пропусками уже неделю, слышен щелчок в экструдере"></textarea>
+          </div>
+          <button class="cta-btn" type="submit" id="cdn-btn">Отправить заявку</button>
+          <div class="err" id="errBox"></div>
+          <div class="consent">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</div>
+          <div class="ok" id="okBox">Заявка отправлена! Свяжемся с вами в ближайшее время.</div>
+        </form>
       </div>
 
-      <div class="col-12 col-lg-7">
-        <form class="lead-form" id="orderForm" data-form="order" novalidate>
-          <div class="row g-3">
-            <div class="col-12 col-md-6">
-              <div class="field">
-                <label for="oName">Имя</label>
-                <input id="oName" name="name" type="text" placeholder="Иван" required>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="field">
-                <label for="oPhone">Телефон или Telegram</label>
-                <input id="oPhone" name="phone" type="text" placeholder="+7 999 123-45-67" required>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="field">
-                <label for="oMat">Материал</label>
-                <select id="oMat" name="material">
-                  <option>PLA</option>
-                  <option>PETG</option>
-                  <option>ABS / ASA</option>
-                  <option>TPU</option>
-                  <option>Фотополимерная смола</option>
-                  <option>Не знаю, подскажите</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="field">
-                <label for="oQty">Количество, шт</label>
-                <input id="oQty" name="qty" type="number" min="1" step="1" value="1">
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="field">
-                <label for="oFile">Ссылка на модель</label>
-                <input id="oFile" name="file_link" type="text" placeholder="Google Drive, Яндекс.Диск, Dropbox">
-                <small class="small-note" style="margin-top:6px;display:block">Файл прикрепить в форме нельзя: отправьте ссылку или пришлите модель в Telegram после заявки.</small>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="field">
-                <label for="oDesc">Что печатаем и зачем</label>
-                <textarea id="oDesc" name="comment" placeholder="Например: корпус для датчика 60×40 мм, нужна прочность и посадка под винты М3"></textarea>
-              </div>
-            </div>
-          </div>
-          <button class="cta-btn" type="submit">Отправить заявку</button>
-          <div class="err" id="orderErr"></div>
-          <div class="consent">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</div>
-          <div class="ok" id="orderOk">Заявка отправлена! Свяжусь с вами в ближайшее время.</div>
-        </form>
+      <div class="col-12 col-lg-6">
+        <ul class="contact-list">
+          <li>
+            <div class="ic">☎</div>
+            <div><b><a href="tel:+79950765209">+7(995)-076-52-09</a></b><span>Звонки с 9:00 до 21:00</span></div>
+          </li>
+          <li>
+            <div class="ic">✈</div>
+            <div><b><a href="https://t.me/arqion_3d" target="_blank" rel="noopener">@arqion_3d</a></b><span>Telegram — отвечаю быстрее всего</span></div>
+          </li>
+          <li>
+            <div class="ic">✉</div>
+            <div><b><a href="mailto:arqion@yandex.ru">arqion@yandex.ru</a></b><span>Для юрлиц и счёта</span></div>
+          </li>
+          <li>
+            <div class="ic">◎</div>
+            <div><b>Выезд по городу</div>
+          </li>
+        </ul>
+
       </div>
     </div>
   </div>
@@ -323,31 +330,27 @@
 <section id="faq">
   <div class="wrap">
     <h2>Частые вопросы</h2>
-    <p class="sub">Если ответа нет, напишите в форме выше.</p>
+    <p class="sub">Если чего-то нет в списке — спросите в форме выше.</p>
     <div>
       <details open>
-        <summary>Что нужно, чтобы заказать печать?</summary>
-        <p>Модель в формате STL, 3MF или STEP, либо эскиз и размеры. Если модели нет, могу нарисовать её по описанию или фото. Это отдельная услуга.</p>
+        <summary>Сколько стоит ремонт заранее?</summary>
+        <p>Точную сумму можно назвать только после диагностики: одна и та же жалоба («не выдавливает пластик») лечится и заменой сопла за 5 минут, и заменой хотэнда целиком. Поэтому я приезжаю, нахожу причину и показываю смету — вы решаете, продолжать или нет.</p>
       </details>
       <details>
-        <summary>Как считается стоимость?</summary>
-        <p>Из веса детали, времени печати и выбранного материала. Минимальный заказ — 500 ₽. Точную сумму называю после проверки модели.</p>
+        <summary>Вы закупаете запчасти сами?</summary>
+        <p>Да. Есть поставщики с наличием по популярным моделям (Creality, Bambu Lab, Anycubic, Elegoo, Prusa). Запчасти беру по себестоимости с чеками, либо устанавливаю те, что купили вы.</p>
       </details>
       <details>
-        <summary>Какой материал выбрать?</summary>
-        <p>PLA — для декора и макетов. PETG — для прочных функциональных деталей. ABS и ASA — для термостойких деталей и улицы. TPU — для гибких. Смола — для мелких деталей с гладкой поверхностью. Подробнее на странице <a href="print-info.html">«Про печать»</a>.</p>
+        <summary>Ремонтируете на месте или забираете принтер?</summary>
+        <p>90% поломок решаю на месте за один визит. Если нужна редкая деталь или пайка платы — забираю принтер в мастерскую и возвращаю после ремонта, срок обычно 1–3 дня.</p>
       </details>
       <details>
-        <summary>Сколько делается заказ и как получить?</summary>
-        <p>Печать занимает 1–3 дня в зависимости от размера и количества. Доставка по городу или почтой России. Самовывоз — по договорённости.</p>
+        <summary>Работаете с юрлицами?</summary>
+        <p>Да. Безналичный расчёт, счёт, акты, договор на обслуживание парка принтеров. Для офисов и производств возможен регулярный выезд по графику.</p>
       </details>
       <details>
-        <summary>Вы гарантируете результат?</summary>
-        <p>Если деталь не соответствует модели или есть брак, перепечатаем бесплатно. Если нужна проверка посадки, сначала печатаем прототип.</p>
-      </details>
-      <details>
-        <summary>Печатаете ли вы крупные детали и серии?</summary>
-        <p>Да. Крупные детали печатаем частями с последующей склейкой. Для серий от 5 штук действует скидка на тираж.</p>
+        <summary>Настроите печать после ремонта?</summary>
+        <p>Обязательно. Ремонт считается законченным, когда принтер печатает тестовую модель — вы видите результат на месте.</p>
       </details>
     </div>
   </div>
@@ -356,24 +359,19 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap fx">
-    <div>© <span id="year"></span> 3D-Печать · [Ваш город]</div>
-    <div>
-      <a href="repair.html" style="color:inherit">Ремонт 3D-принтеров</a> ·
-      <a href="print-info.html" style="color:inherit">Про печать</a> ·
-      ИП [ФИО] · ИНН [номер] · Политика обработки персональных данных
-    </div>
+    <div>© <span id="year"></span> 3D-Мастерская · Ремонт 3D-принтеров в [Ваш город]</div>
+    <div>ИП Брюханов Роман Валерьевич · ИНН 246516609207 · <a href="politika_arqion.html">Политика обработки персональных данных</a> </div>
   </div>
 </footer>
 
 <!-- Липкая кнопка только на телефоне -->
 <div class="mobile-cta">
-  <a class="cta-btn" href="#order">Заказать печать</a>
-  <a class="cta-btn ghost" href="tel:+70000000000">Позвонить</a>
+  <a class="cta-btn" href="#request">Оставить заявку</a>
+  <a class="cta-btn ghost" href="tel:+79950765209">Позвонить</a>
 </div>
-
-<!-- Bootstrap JS (нужен для бургер-меню и карусели) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<!-- Ваши скрипты -->
-<script src="scripts.js"></script>
+
+<script src="scripts.js" ></script>
+
 </body>
 </html>
